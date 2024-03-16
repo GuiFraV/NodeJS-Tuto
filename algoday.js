@@ -55,7 +55,16 @@ books.forEach(book => {
     })
 })
 
-console.log(totalBorrow);
+// console.log(totalBorrow);
 
 // Exercice 5 : Une fonction qui prend en paramètre un id de livre et renvoie une chaîne de caractères
 // La fonction doit renvoyer une chaîne de caractères qui décrit le livre et les personnes qui l'ont emprunté, par exemple : "Les Misérables, écrit par Victor Hugo en 1862, a été emprunté par les personnes avec les id."
+
+books.forEach(book => {
+    let borrowBy = [];
+    book.borrowedBy.forEach(borrow => {
+        borrowBy.push(borrow)
+    })
+    console.log(`${book.title}, écrit par ${book.author} en ${book.year}, a été emprunté par les personnes avec les ids ${borrowBy.length == 0 ? "personnes" : borrowBy.join(", ")}.`)
+})
+
